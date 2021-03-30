@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,700");
+:root {
+  --level-one: translateZ(2rem);
+  --level-two: translateZ(4rem);
+  --level-three: translateZ(6rem);
+  --transition: transform 1000ms cubic-bezier(0.29, 0.01, 0.48, 1.26);
+  --perspective: 800px;
+  --fw-normal: 400;
+  --fw-bold: 700;
+  --color-bg: #444c57;
+  --color-dark: #212429;
+  --color-light: #eee;
+  --color-link: #ccc;
+  --color-link-hover: #3cc;
+  --color-accent: #49b8f0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Oswald", sans-serif;
+  background: var(--color-bg);
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-link);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+button {
+  font-weight: var(fw-normal);
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  border-radius: 50vh;
+  background-color: var(--color-accent);
+  width: 80%;
+  padding: 0.5em 2em;
+  margin: 2em auto;
+}
+
+.icon::before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+}
+
+.cards {
+  display: flex;
+  width: calc(100% - 5rem);
+  justify-content: center;
+}
+
+.card {
+  width: 350px;
+  perspective: var(--perspective);
+  position: relative;
+}
+
+.card + .card {
+  margin-left: 3rem;
+}
+
+.card__content {
+  min-height: 450px;
+  border-radius: 2rem;
+  box-shadow: 0 0 20px black;
+  background-color: black;
+  border-radius: 1em;
+  text-align: center;
+  position: relative;
+  padding: 15em 5em;
+  transition: var(--transition);
+  transform-style: preserve-3d;
+}
+
+.card:hover .card__content {
+  transform: rotateY(0.5turn);
+}
+
+.card__front,
+.card__back {
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5em 3em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  display: grid;
+  align-content: center;
+}
+
+.card__front {
+  background-color: var(--color-bg);
+  background-size: cover;
+  color: #eee;
+}
+
+.tanner {
+  background-image: url("../img/Tanner-D-Brink.JPG");
+}
+
+.dominic {
+  background-image: url("../img/Dominic-V-Signorotti.jpg");
+}
+
+.card__back {
+  transform: rotateY(0.5turn);
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.card__front::before,
+.card__back::before {
+  border-radius: .75rem;
+  content: "";
+  position: absolute;
+  --spacer: .75em;
+  top: var(--spacer);
+  bottom: var(--spacer);
+  left: var(--spacer);
+  right: var(--spacer);
+  border: 3px solid currentColor;
+  transform: var(--level-one);
+}
+
+.card__front::before {
+  border: 3px solid black;
+}
+
+.card__name {
+  font-size: 2em;
+  transform: var(--level-three);
+  perspective: var(--perspective);
+  text-transform: uppercase;
+  margin-top: 95%;
+  width: 100%;
+  text-shadow: 0 0 10px black;
+}
+
+.card__title {
+  transform: var(--level-two);
+  perspective: var(--perspective);
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-size: 0.75em;
+  font-weight: var(--fw-bold);
+  margin-top: 1em;
+  text-shadow: 0 0 10px black;
+}
+
+.card__body {
+  transform: var(--level-two);
+  perspective: var(--perspective);
+  font-weight: var(fw-normal);
+  font-size: 1.5rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+.card__phone,
+.card__email {
+  transform: var(--level-two);
+  perspective: var(--perspective);
+  font-weight: var(fw-normal);
+  font-size: 1.2rem;
+}
+
+.more__info {
+  transform: var(--level-three);
+  perspective: var(--perspective);
+}
+
+.card__body::after {
+  content: "";
+  display: block;
+  width: 25%;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background-color: #ccc;
+}
+
+.card__phone,
+.card__email {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.card__phone::before {
+  content: "\f095";
+  color: #0099ff;
+  font-size: 0.75em;
+  margin-right: 0.5em;
+}
+
+.card__email::before {
+  content: "\f0e0";
+  color: #0099ff;
+  font-size: 0.75em;
+  margin-right: 0.5em;
+}
