@@ -129,7 +129,7 @@ footer.social {
 
 .btn__email {
     &::before {
-        content: "\f0e0";
+        content: "\f1fa";
     }
     &:hover::before {
         content: "EMAIL";
@@ -138,7 +138,7 @@ footer.social {
 
 .btn__more {
     &::before {
-        content: "\f101";
+        content: "\f007";
     }
     &:hover::before {
         content: "MORE INFO";

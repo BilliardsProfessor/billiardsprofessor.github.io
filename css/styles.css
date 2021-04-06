@@ -324,14 +324,14 @@ footer.social {
 }
 
 .btn__email::before {
-  content: "";
+  content: "";
 }
 .btn__email:hover::before {
   content: "EMAIL";
 }
 
 .btn__more::before {
-  content: "";
+  content: "";
 }
 .btn__more:hover::before {
   content: "MORE INFO";
