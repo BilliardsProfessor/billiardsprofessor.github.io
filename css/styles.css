@@ -285,13 +285,18 @@ button {
   margin-right: 0.5em;
 }
 
-button:hover {
+button:hover:hover {
   background: #7fccff;
   -webkit-box-shadow: 0 0 10px 0 #0099ff, 0 0 20px 0 #0099ff, 0 0 30px 0 #0099ff;
           box-shadow: 0 0 10px 0 #0099ff, 0 0 20px 0 #0099ff, 0 0 30px 0 #0099ff;
   border: 1px solid white;
   -webkit-transform: rotate(360deg) scale(1.2);
           transform: rotate(360deg) scale(1.2);
+}
+button:hover:hover::before {
+  font-family: Oswald, sans-serif;
+  font-size: 0.75em;
+  text-shadow: 0 0 5px black;
 }
 
 button:active {
@@ -302,13 +307,22 @@ button:active {
 .btn__phone::before {
   content: "";
 }
+.btn__phone:hover::before {
+  content: "CALL";
+}
 
 .btn__email::before {
   content: "";
 }
+.btn__email:hover::before {
+  content: "EMAIL";
+}
 
 .btn__more::before {
   content: "";
+}
+.btn__more:hover::before {
+  content: "MORE";
 }
 
 .icon::before,
