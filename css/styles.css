@@ -399,8 +399,8 @@ footer.social {
           animation: flatten-3 1000ms ease forwards;
 }
 
-.lift-me:hover,
-.lift-me:focus {
+.card-lift:hover,
+.card-lift:focus {
   -webkit-animation: card-lift 1000ms ease-in;
           animation: card-lift 1000ms ease-in;
   z-index: 99;

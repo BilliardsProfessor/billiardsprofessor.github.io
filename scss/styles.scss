@@ -1,4 +1,5 @@
 @use "animations" as anim;
+@use "cards" as cards;
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700;900&display=swap");
 // Variables
@@ -190,8 +191,8 @@ footer.social {
     }
 }
 
-.lift-me:hover,
-.lift-me:focus {
+.card-lift:hover,
+.card-lift:focus {
     animation: card-lift $anim ease-in;
     z-index: 99;
 }
